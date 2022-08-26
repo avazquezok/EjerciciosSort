@@ -2,11 +2,11 @@
 const myStringArray = ["Dato1", "Alo", "Programar", "filosofia", "3", "a"];
 
 // El método sort por defecto ordena los Strings de forma ascendente
-console.log(myStringArray.sort());
+console.log(JSON.stringify(myStringArray.sort()));
 
 // Podemos alterar el funcionamiento por defecto del método sort si le proveemos una función de comparación
 console.log(
-  myStringArray.sort(
+  JSON.stringify(myStringArray.sort(
     (
       a /* Primer elemento a comparar */,
       b /* Segundo elemento a comparar */
@@ -17,16 +17,16 @@ console.log(
       // Por defecto se devuelve 0 cuando son iguales (no se cambian de lugar)
       return 0;
     }
-  )
+  ))
 );
 
 // Ordenado de la misma manera que en el sort por defecto:
 console.log(
-  myStringArray.sort((a, b) => {
+  JSON.stringify(myStringArray.sort((a, b) => {
     if (a < b) return -1;
     if (a > b) return 1;
     return 0;
-  })
+  }))
 );
 
 // El método sort es bueno para ordenar números y strings, pero su uso más potente es ordenando registros (objetos) utilizando algún campo para ello
