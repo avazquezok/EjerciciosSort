@@ -6,3 +6,19 @@ const objectArray = [
   { name: "Alfredo", lastname: "Franco", age: 255 },
 ];
 
+objectArray.sort((a, b) => {
+  return a.name.localeCompare(b.name);
+})
+
+console.log(objectArray);
+
+const tableBody = document.getElementById("data");
+
+objectArray.forEach(element => {
+
+  tableBody.innerHTML += `<tr>
+  <td>  ${element.name}  </td>
+  <td> ${element.lastname} </td>
+  <td> ${element.age} </td></tr>`
+});
+
